@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Eventus UPT</string>
+
+    <string name="menu_home">Inicio</string>
+    <string name="menu_explore">Explorar</string>
+    <string name="menu_qr">QR</string>
+    <string name="menu_event">Eventos</string>
+    <string name="menu_profile">Perfil</string>
+
+    <!-- login text -->
+    <string name="login_welcome">Bienvenidos</string>
+    <string name="login_welcome_description">Inicie sesión con su información personal por correo electrónico y contraseña</string>
+    <string name="login_username">Correo eléctronico</string>
+    <string name="login_password">Contraseña</string>
+    <string name="login_button_login">Iniciar Sesión</string>
+
+    <!-- event text -->
+    <string name="event_provider">Dirección de Educación Continua</string>
+    <string name="event_title">Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1</string>
+    <string name="event_date">Jueves 18 de junio | 9:30 - 10:30 am</string>
+    <string name="event_image_description">Event</string>
+
+    <!-- event type text -->
+    <string name="event_type_name">Académico</string>
+
+    <!-- qr text -->
+    <string name="qr_message_title">Escanear código QR</string>
+    <string name="qr_message_description">Apunta su cámara hacia el código QR para ver la información del evento</string>
+    <string name="qr_image_description">Escanear Evento</string>
+    <string name="qr_button_scan">Escanear</string>
+
+    <!-- my event text -->
+    <string name="my_event_title">Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1</string>
+    <string name="my_event_image_description">My Event</string>
+    <string name="my_event_date">Jueves 18 de junio | 9:30 - 10:30 am</string>
+
+    <!-- profile text -->
+    <string name="profile_avatar_description">Avatar</string>
+    <string name="profile_user_name">Elard Roma</string>
+    <string name="profile_user_email">elardroma@upt.pe</string>
+
+</resources>
