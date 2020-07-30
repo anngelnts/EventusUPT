@@ -15,6 +15,8 @@ public class EventModel {
         this.dateString = dateString;
     }
 
+    public EventModel(){}
+
     public int getId() {
         return id;
     }
