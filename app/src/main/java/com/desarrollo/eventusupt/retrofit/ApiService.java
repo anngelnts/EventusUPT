@@ -1,6 +1,7 @@
 package com.desarrollo.eventusupt.retrofit;
 
 import com.desarrollo.eventusupt.retrofit.responses.EventResponse;
+import com.desarrollo.eventusupt.retrofit.responses.LoginResponse;
 import com.desarrollo.eventusupt.retrofit.responses.UserResponse;
 
 import java.util.List;
@@ -22,6 +23,10 @@ public interface ApiService {
                                   @Field("email") String email,
                                   @Field("password") String password,
                                   @Field("status") int status);
+
+    @FormUrlEncoded
+    @POST("users/login")
+    Call<LoginResponse> loginUser(@Field("email") String email, @Field("password") String password);
 
     @GET("events")
     Call<List<EventResponse>> getEvents();

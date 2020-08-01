@@ -9,6 +9,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.desarrollo.eventusupt.helpers.SaveSharedPreference;
+import com.desarrollo.eventusupt.retrofit.RetrofitClient;
+import com.desarrollo.eventusupt.retrofit.responses.LoginResponse;
+import com.desarrollo.eventusupt.retrofit.responses.UserResponse;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class LoginActivity extends AppCompatActivity {
 
     Button buttonLogin;
@@ -52,10 +61,32 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void onLogin(String username, String password){
+    private void initHome(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    private void onLogin(String username, String password){
+        Call<LoginResponse> call = RetrofitClient.getInstance().getApi().loginUser(username, password);
+        call.enqueue(new Callback<LoginResponse>() {
+            @Override
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                if(response.code() == 200) {
+                    assert response.body() != null;
+                    String token = response.body().getToken();
+                    SaveSharedPreference.setLoggedIn(getApplicationContext(), token, true);
+                    initHome();
+                }else if(response.code() == 401){
+                    Toast.makeText(LoginActivity.this, "Usuario no autorizado", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                //
+            }
+        });
     }
 
     private void onRegister(){

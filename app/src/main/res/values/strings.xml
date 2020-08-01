@@ -51,6 +51,7 @@
     <string name="profile_avatar_description">Avatar</string>
     <string name="profile_user_name">Elard Roma</string>
     <string name="profile_user_email">elardroma@upt.pe</string>
+    <string name="profile_logout_text">Cerrar Sesión</string>
 
 </resources>
 
