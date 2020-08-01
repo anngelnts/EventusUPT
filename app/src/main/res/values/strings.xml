@@ -13,6 +13,19 @@
     <string name="login_username">Correo eléctronico</string>
     <string name="login_password">Contraseña</string>
     <string name="login_button_login">Iniciar Sesión</string>
+    <string name="login_button_register">Registrarse</string>
+
+    <!-- Register text -->
+    <string name="register_welcome">Registro</string>
+    <string name="register_welcome_description">Llene todos los campos con su información personal para completar su registro</string>
+    <string name="register_name">Nombres</string>
+    <string name="register_lastname">Apellidos</string>
+    <string name="register_phone">Celular</string>
+    <string name="register_email">Correo eléctronico</string>
+    <string name="register_password">Contraseña</string>
+    <string name="register_button_finish">Terminar Registro</string>
+    <string name="register_button_cancel">Cancelar</string>
+
 
     <!-- event text -->
     <string name="event_provider">Dirección de Educación Continua</string>
@@ -40,3 +53,4 @@
     <string name="profile_user_email">elardroma@upt.pe</string>
 
 </resources>
+

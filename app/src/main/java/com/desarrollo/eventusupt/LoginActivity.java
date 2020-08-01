@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class LoginActivity extends AppCompatActivity {
 
     Button buttonLogin;
+    Button buttonRegister;
     EditText editUsername;
     EditText editPassword;
 
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
         editUsername = findViewById(R.id.login_edit_username);
         editPassword = findViewById(R.id.login_edit_password);
         buttonLogin = findViewById(R.id.login_button_login);
+        buttonRegister = findViewById(R.id.login_button_register);
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +42,14 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+        buttonRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onRegister();
+            }
+        });
+
     }
 
     private void onLogin(String username, String password){
@@ -47,4 +57,11 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+    private void onRegister(){
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
 }

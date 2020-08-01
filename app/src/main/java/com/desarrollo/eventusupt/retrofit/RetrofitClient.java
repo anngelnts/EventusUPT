@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    private static final String BASE_URL = "http://dev.reyfact.com/eventusupt/api/";
+    private static final String BASE_URL = "https://dev.reyfact.com/eventusupt/api/";
     private static RetrofitClient mInstance;
     private Retrofit retrofit;
 
