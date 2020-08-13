@@ -13,21 +13,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterActivity" android:theme="@style/RegisterTheme"></activity>
+        <activity android:name=".CreateEventActivity"
+            android:parentActivityName=".MainActivityOrganizer">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivityOrganizer"/>
+        </activity>
+        <activity
+            android:name=".ProfileEditOrganizerActivity"
+            android:parentActivityName=".MainActivityOrganizer">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivityOrganizer" />
+        </activity>
+        <activity
+            android:name=".MainActivityOrganizer"
+            android:theme="@style/MainTheme"/>
+        <activity
+            android:name=".LoginOrganizerActivity"
+            android:theme="@style/LoginTheme" />
+        <activity
+            android:name=".RegisterActivity"
+            android:theme="@style/RegisterTheme" />
         <activity
             android:name=".SplashActivity"
             android:label="@string/app_name"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".LoginActivity"
             android:theme="@style/LoginTheme" />
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".MainActivity" />
     </application>
 
 </manifest>

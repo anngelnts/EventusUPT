@@ -31,7 +31,7 @@
                     android:layout_height="70dp"
                     android:layout_gravity="center"
                     android:contentDescription="@string/profile_avatar_description"
-                    android:background="@color/colorGrey"
+                    android:background="@color/colorGray"
                     android:layout_marginBottom="15dp"/>
 
                 <TextView
@@ -48,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/profile_user_email"
-                    android:textColor="@color/colorGrey" />
+                    android:textColor="@color/colorGray" />
 
 
             </LinearLayout>

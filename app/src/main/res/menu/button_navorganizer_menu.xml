@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeOrganizerFragment"
+        android:icon="@drawable/ic_home"
+        android:title="@string/menu_home"/>
+
+    <item
+        android:id="@+id/qrOrganizerFragment"
+        android:icon="@drawable/ic_code_qr"
+        android:title="@string/menu_qr"/>
+
+    <item
+        android:id="@+id/profileOrganizerFragment"
+        android:icon="@drawable/ic_user"
+        android:title="@string/menu_profile"/>
+</menu>

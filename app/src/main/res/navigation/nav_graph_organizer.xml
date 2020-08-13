@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_organizer"
+    app:startDestination="@id/homeOrganizerFragment">
+
+    <fragment
+        android:id="@+id/homeOrganizerFragment"
+        android:name="com.desarrollo.eventusupt.fragments.HomeOrganizerFragment"
+        android:label="fragment_home_orgranizer"
+        tools:layout="@layout/fragment_home_organizer" >
+        <action
+            android:id="@+id/action_homeFragment_to_QRFragment"
+            app:destination="@id/qrOrganizerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileOrganizerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/qrOrganizerFragment"
+        android:name="com.desarrollo.eventusupt.fragments.QROrganizerFragment"
+        android:label="fragment_qr_organizer"
+        tools:layout="@layout/fragment_qr_organizer"/>
+
+    <fragment
+        android:id="@+id/profileOrganizerFragment"
+        android:name="com.desarrollo.eventusupt.fragments.ProfileOrganizerFragment"
+        android:label="fragment_profile_organizer"
+        tools:layout="@layout/fragment_profile_organizer"/>
+
+</navigation>

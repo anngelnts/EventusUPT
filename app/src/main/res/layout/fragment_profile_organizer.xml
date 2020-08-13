@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorGrayLight">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorWhite">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end">
+
+                <TextView
+                    android:id="@+id/organizer_textbutton_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/profile_organizer_textbutton_edit"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/organizer_avatar"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:background="#E5E5E5"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/organizer_text_username"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/profile_organizer_name"
+                android:gravity="center"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/profile_organizer_email"
+                android:gravity="center"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/colorGray"
+                android:textSize="18sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/profile_organizer_text_name"
+                        android:fontFamily="sans-serif"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
+
+                    <TextView
+                        android:id="@+id/txt_organizer_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/profile_organizer_name"
+                        android:fontFamily="sans-serif"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/profile_organizer_text_acronym"
+                        android:fontFamily="sans-serif"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
+
+                    <TextView
+                        android:id="@+id/txt_organizer_acronym"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/profile_organizer_acronym"
+                        android:fontFamily="sans-serif"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="10dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="40dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/profile_organizer_text_phone"
+                        android:fontFamily="sans-serif"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
+
+                    <TextView
+                        android:id="@+id/txt_organizer_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/profile_organizer_phone"
+                        android:fontFamily="sans-serif"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/profile_organizer_text_status"
+                        android:fontFamily="sans-serif"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
+
+                    <TextView
+                        android:id="@+id/txt_organizer_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/profile_organizer_status"
+                        android:fontFamily="sans-serif"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="10dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/profile_organizer_text_email"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/txt_organizer_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/profile_organizer_email"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/profile_organizer_text_facebook"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/txt_organizer_facebook"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/profile_organizer_facebook"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/profile_organizer_text_website"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/txt_organizer_website"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/profile_organizer_website"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/profile_button_signoff"
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="15dp"
+                android:text="@string/profile_organizer_logout_text"
+                android:textColor="@color/colorWhite"
+                android:backgroundTint="@color/colorPrimary"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

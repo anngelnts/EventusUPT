@@ -23,6 +23,7 @@
             android:id="@+id/action_homeFragment_to_QRFragment"
             app:destination="@id/QRFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/exploreFragment"
         android:name="com.desarrollo.eventusupt.fragments.ExploreFragment"

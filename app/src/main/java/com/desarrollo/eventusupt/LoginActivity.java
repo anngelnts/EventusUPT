@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +22,8 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
 
     Button buttonLogin;
-    Button buttonRegister;
+    TextView textbuttonRegister;
+    TextView textbuttonLoginOrganizer;
     EditText editUsername;
     EditText editPassword;
 
@@ -33,7 +35,8 @@ public class LoginActivity extends AppCompatActivity {
         editUsername = findViewById(R.id.login_edit_username);
         editPassword = findViewById(R.id.login_edit_password);
         buttonLogin = findViewById(R.id.login_button_login);
-        buttonRegister = findViewById(R.id.login_button_register);
+        textbuttonRegister = findViewById(R.id.login_txtbutton_register);
+        textbuttonLoginOrganizer = findViewById(R.id.login_txtbutton_login_organizer);
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,10 +55,17 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        buttonRegister.setOnClickListener(new View.OnClickListener() {
+        textbuttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onRegister();
+            }
+        });
+
+        textbuttonLoginOrganizer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onLoginOrganizer();
             }
         });
 
@@ -91,6 +101,12 @@ public class LoginActivity extends AppCompatActivity {
 
     private void onRegister(){
         Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void onLoginOrganizer(){
+        Intent intent = new Intent(this, LoginOrganizerActivity.class);
         startActivity(intent);
         finish();
     }
