@@ -6,6 +6,8 @@
     android:orientation="vertical"
     tools:context=".fragments.HomeFragment">
 
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/events_recycler_view"
         android:scrollbars="vertical"

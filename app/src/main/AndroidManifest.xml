@@ -49,6 +49,10 @@
             android:theme="@style/LoginTheme" />
         <activity
             android:name=".MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
