@@ -329,6 +329,12 @@
                 android:gravity="center"
                 android:id="@+id/create_evento_button_create"
                 android:text="@string/create_event_button_create"/>
+            <Button
+                android:id="@+id/create_event_button_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="15dp"
+                android:text="@string/register_button_cancel" />
 
         </LinearLayout>
 
