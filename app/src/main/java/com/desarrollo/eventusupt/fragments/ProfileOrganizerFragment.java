@@ -113,7 +113,16 @@ public class ProfileOrganizerFragment extends Fragment {
     }
 
     private void setProfile(OrganizerResponse organizer){
+        String status = organizer.getStatus() == 1 ? "Activo" : "Inactivo";
         organizer_text_username.setText(organizer.getName());
+        organizer_text_email.setText(organizer.getEmail());
+        txt_organizer_name.setText(organizer.getName());
+        txt_organizer_acronym.setText(organizer.getAcronym());
+        txt_organizer_phone.setText(organizer.getPhone());
+        txt_organizer_status.setText(status);
+        txt_organizer_email.setText(organizer.getEmail());
+        txt_organizer_facebook.setText(organizer.getFacebook());
+        txt_organizer_website.setText(organizer.getWebsite());
     }
 
 }

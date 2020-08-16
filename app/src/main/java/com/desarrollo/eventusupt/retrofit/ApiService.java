@@ -44,7 +44,7 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("organizers/login")
     Call<LoginResponse> loginOrganizer(@Field("email") String email, @Field("password") String password);
-    
+
     @GET("organizers/profile")
     Call<OrganizerResponse> getProfileOrganizer(@Query("token") String token);
 }
