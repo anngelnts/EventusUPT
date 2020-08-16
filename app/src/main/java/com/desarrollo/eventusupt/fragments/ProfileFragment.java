@@ -17,11 +17,7 @@ import com.desarrollo.eventusupt.R;
 import com.desarrollo.eventusupt.helpers.SaveSharedPreference;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ProfileFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class ProfileFragment extends Fragment {
 
     TextView profile_logout;
@@ -49,7 +45,7 @@ public class ProfileFragment extends Fragment {
         profile_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SaveSharedPreference.setLoggedIn(getContext(), "", false);
+                SaveSharedPreference.setLoggedIn(getContext(), "", false, "");
                 Intent intent = new Intent(getContext(), LoginActivity.class);
                 startActivity(intent);
                 getActivity().finish();

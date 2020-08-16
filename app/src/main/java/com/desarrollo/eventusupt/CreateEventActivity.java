@@ -114,7 +114,7 @@ public class CreateEventActivity extends AppCompatActivity {
     }
 
     private void sendPost(int audience, String title, String description, String date, String timestart, String timeend, String format, String eventstatus, String urladdress, String eventtype, String school, int status){
-        mAPIService.createEvent(audience,title,description,date,timestart,timeend,format,eventstatus,urladdress,eventtype,school,status).enqueue(new Callback<UserResponse>() {
+        /*mAPIService.createEvent(audience,title,description,date,timestart,timeend,format,eventstatus,urladdress,eventtype,school,status).enqueue(new Callback<UserResponse>() {
             @Override
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                 if (response.isSuccessful()){
@@ -127,7 +127,7 @@ public class CreateEventActivity extends AppCompatActivity {
             public void onFailure(Call<UserResponse> call, Throwable t) {
                 Toast.makeText(CreateEventActivity.this, "Unable to submit post to API.",Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
     }
 
     private void OnBack(){

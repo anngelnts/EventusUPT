@@ -57,6 +57,7 @@
                 android:textSize="18sp"/>
 
             <TextView
+                android:id="@+id/organizer_text_email"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/profile_organizer_email"
@@ -235,7 +236,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/profile_button_signoff"
+                android:id="@+id/organizer_button_signoff"
                 android:layout_width="match_parent"
                 android:layout_margin="10dp"
                 android:layout_height="wrap_content"
