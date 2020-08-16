@@ -48,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int audience = 1;
+                int audience = 2;
                 String name = editName.getText().toString();
                 String lastname = editLastname.getText().toString();
                 String phone = editPhone.getText().toString();

@@ -16,7 +16,7 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST("users/register")
-    Call<UserResponse> createUser(@Field("audience") int audience,
+    Call<UserResponse> createUser(@Field("audience_id") int audience,
                                   @Field("name") String name,
                                   @Field("lastname") String lastname,
                                   @Field("phone") String phone,
@@ -30,4 +30,11 @@ public interface ApiService {
 
     @GET("events")
     Call<List<EventResponse>> getEvents();
+
+
+
+    //organizer
+    @FormUrlEncoded
+    @POST("organizers/login")
+    Call<LoginResponse> loginOrganizer(@Field("email") String email, @Field("password") String password);
 }

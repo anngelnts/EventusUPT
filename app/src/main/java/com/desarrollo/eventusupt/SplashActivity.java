@@ -17,8 +17,13 @@ public class SplashActivity extends AppCompatActivity {
 
     private void UserLogged(){
         if(SaveSharedPreference.getLoggedStatus(getApplicationContext())) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+            if(SaveSharedPreference.getLoggedType(getApplicationContext()).equals("1")){
+                Intent intent = new Intent(this, MainActivityOrganizer.class);
+                startActivity(intent);
+            }else if(SaveSharedPreference.getLoggedType(getApplicationContext()).equals("2")){
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+            }
         }else{
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);

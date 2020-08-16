@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(response.code() == 200) {
                     assert response.body() != null;
                     String token = response.body().getToken();
-                    SaveSharedPreference.setLoggedIn(getApplicationContext(), token, true);
+                    SaveSharedPreference.setLoggedIn(getApplicationContext(), token, true, "2");
                     initHome();
                 }else if(response.code() == 401){
                     Toast.makeText(LoginActivity.this, "Usuario no autorizado", Toast.LENGTH_SHORT).show();
