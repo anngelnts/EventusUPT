@@ -8,11 +8,15 @@ import com.desarrollo.eventusupt.retrofit.responses.UserResponse;
 
 import java.util.List;
 
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Query;
 
 public interface ApiService {
@@ -38,7 +42,21 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST("events")
-    Call<List<EventResponse>> createEvents();
+    Call<EventResponse> createEvents(//@Part MultipartBody.Part image,
+                                     @Field("type_id") int type_id,
+                                     @Field("school_id") int school_id,
+                                     @Field("title") String title,
+                                     @Field("description") String description,
+                                     @Field("event_date") String event_date,
+                                     @Field("start_time") String start_time,
+                                     @Field("end_time") String end_time,
+                                     @Field("is_outstanding") int is_outstanding,
+                                     @Field("is_virtual") int is_virtual,
+                                     @Field("is_open") int is_open,
+                                     @Field("location") String location,
+                                     @Field("event_link") String event_link,
+                                     @Field("status") int status,
+                                     @Field("token") String token);
 
 
     //event types
