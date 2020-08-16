@@ -90,6 +90,8 @@
     <string name="profile_organizer_status">Activo</string>
 
     <string name="profile_organizer_logout_text">Cerrar Sesión</string>
+    <string name="organizer_edit_save">Guardar cambios</string>
+    <string name="organizer_change_password">Cambiar mi contraseña</string>
 
     <!-- Event text -->
     <string name="create_event_title">Titulo:</string>

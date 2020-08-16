@@ -69,9 +69,21 @@ public interface ApiService {
     @POST("organizers/login")
     Call<LoginResponse> loginOrganizer(@Field("email") String email, @Field("password") String password);
 
+    @FormUrlEncoded
+    @POST("organizers/profile")
+    Call<OrganizerResponse> editProfileOrganizer(@Field("token") String token,
+                                                 @Field("name") String name,
+                                                 @Field("acronym") String acronym,
+                                                 @Field("phone") String phone,
+                                                 @Field("website") String website,
+                                                 @Field("facebook") String facebook,
+                                                 @Field("email") String email);
+
     @GET("organizers/profile")
     Call<OrganizerResponse> getProfileOrganizer(@Query("token") String token);
 
+
+    //users
     @GET("users/profile")
     Call<UserResponse> getProfileUsers(@Query("token")String token);
 

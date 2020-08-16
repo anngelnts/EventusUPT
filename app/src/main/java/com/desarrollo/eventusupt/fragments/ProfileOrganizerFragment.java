@@ -26,8 +26,6 @@ import retrofit2.Response;
 
 public class ProfileOrganizerFragment extends Fragment {
 
-    TextView textbuttonEdit;
-
     TextView organizer_text_username;
     TextView organizer_text_email;
     TextView txt_organizer_name;
@@ -75,6 +73,15 @@ public class ProfileOrganizerFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //edit perfil
+                Intent intent = new Intent(getActivity(), ProfileEditOrganizerActivity.class);
+                intent.putExtra("name", txt_organizer_name.getText());
+                intent.putExtra("acronym", txt_organizer_acronym.getText());
+                intent.putExtra("phone", txt_organizer_phone.getText());
+                intent.putExtra("status", txt_organizer_status.getText());
+                intent.putExtra("email", txt_organizer_email.getText());
+                intent.putExtra("facebook", txt_organizer_facebook.getText());
+                intent.putExtra("website", txt_organizer_website.getText());
+                startActivity(intent);
             }
         });
 
@@ -89,11 +96,6 @@ public class ProfileOrganizerFragment extends Fragment {
             }
         });
 
-    }
-
-    public void OnEditProfile(){
-        Intent intent = new Intent(getActivity(), ProfileEditOrganizerActivity.class);
-        startActivity(intent);
     }
 
     private void getProfile(){
