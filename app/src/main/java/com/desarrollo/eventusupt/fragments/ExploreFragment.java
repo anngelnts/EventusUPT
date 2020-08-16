@@ -11,12 +11,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.desarrollo.eventusupt.R;
+import com.desarrollo.eventusupt.adapters.EventAdapter;
 import com.desarrollo.eventusupt.adapters.EventTypeAdapter;
+import com.desarrollo.eventusupt.models.EventModel;
 import com.desarrollo.eventusupt.models.EventTypeModel;
+import com.desarrollo.eventusupt.retrofit.RetrofitClient;
+import com.desarrollo.eventusupt.retrofit.responses.EventResponse;
+import com.desarrollo.eventusupt.retrofit.responses.EventTypeResponse;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class ExploreFragment extends Fragment {
@@ -45,13 +56,40 @@ public class ExploreFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         recyclerView = view.findViewById(R.id.events_types_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        EventTypeAdapter eventTypeAdapter = new EventTypeAdapter(listEventTypes);
-        recyclerView.setAdapter(eventTypeAdapter);
+        setAdapter();
+    }
+
+    private void setAdapter(){
+        EventTypeAdapter eventAdapter = new EventTypeAdapter(listEventTypes);
+        recyclerView.setAdapter(eventAdapter);
     }
 
     private void setEvents(){
         listEventTypes = new ArrayList<>();
-        listEventTypes.add(new EventTypeModel(1, "Académico"));
+
+        Call<List<EventTypeResponse>> call = RetrofitClient.getInstance().getApi().getEventTypes();
+        call.enqueue(new Callback<List<EventTypeResponse>>() {
+            @Override
+            public void onResponse(Call<List<EventTypeResponse>> call, Response<List<EventTypeResponse>> response) {
+                if(response.isSuccessful()) {
+                    List<EventTypeResponse> eventTypes = response.body();
+                    for (EventTypeResponse type : eventTypes) {
+                        EventTypeModel eventModel = new EventTypeModel();
+                        eventModel.setId(type.getId());
+                        eventModel.setName(type.getName());
+                        listEventTypes.add(eventModel);
+                    }
+                    setAdapter();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<EventTypeResponse>> call, Throwable t) {
+                Toast.makeText(getContext(), "Algo salio mal", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        /*listEventTypes.add(new EventTypeModel(1, "Académico"));
         listEventTypes.add(new EventTypeModel(2, "Ceremonia"));
         listEventTypes.add(new EventTypeModel(3, "Conferencia"));
         listEventTypes.add(new EventTypeModel(4, "Exposición"));
@@ -61,6 +99,6 @@ public class ExploreFragment extends Fragment {
         listEventTypes.add(new EventTypeModel(8, "Actuación"));
         listEventTypes.add(new EventTypeModel(9, "Evento especial"));
         listEventTypes.add(new EventTypeModel(10, "Actividad estudiantil"));
-        listEventTypes.add(new EventTypeModel(11, "Taller"));
+        listEventTypes.add(new EventTypeModel(11, "Taller"));*/
     }
 }

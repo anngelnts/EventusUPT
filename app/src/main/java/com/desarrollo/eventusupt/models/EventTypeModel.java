@@ -9,6 +9,8 @@ public class EventTypeModel {
         this.name = name;
     }
 
+    public EventTypeModel(){}
+
     public int getId() {
         return id;
     }

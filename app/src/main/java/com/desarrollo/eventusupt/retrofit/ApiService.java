@@ -1,6 +1,7 @@
 package com.desarrollo.eventusupt.retrofit;
 
 import com.desarrollo.eventusupt.retrofit.responses.EventResponse;
+import com.desarrollo.eventusupt.retrofit.responses.EventTypeResponse;
 import com.desarrollo.eventusupt.retrofit.responses.LoginResponse;
 import com.desarrollo.eventusupt.retrofit.responses.OrganizerResponse;
 import com.desarrollo.eventusupt.retrofit.responses.UserResponse;
@@ -38,6 +39,11 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("events")
     Call<List<EventResponse>> createEvents();
+
+
+    //event types
+    @GET("event-types")
+    Call<List<EventTypeResponse>> getEventTypes();
 
 
     //organizers

@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.desarrollo.eventusupt.LoginActivity;
 import com.desarrollo.eventusupt.ProfileEditOrganizerActivity;
 import com.desarrollo.eventusupt.R;
 import com.desarrollo.eventusupt.helpers.SaveSharedPreference;
@@ -81,6 +82,10 @@ public class ProfileOrganizerFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //cerrar sesión
+                SaveSharedPreference.setLoggedIn(getContext(), "", false, "");
+                Intent intent = new Intent(getContext(), LoginActivity.class);
+                startActivity(intent);
+                getActivity().finish();
             }
         });
 
@@ -101,6 +106,9 @@ public class ProfileOrganizerFragment extends Fragment {
                     assert response.body() != null;
                     setProfile(response.body());
                 }else if(response.code() == 401){
+                    Toast.makeText(getContext(), "Organizador no encontrado", Toast.LENGTH_SHORT).show();
+                }
+                else if(response.code() == 404){
                     Toast.makeText(getContext(), "Organizador no encontrado", Toast.LENGTH_SHORT).show();
                 }
             }
