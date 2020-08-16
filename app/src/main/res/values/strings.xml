@@ -119,5 +119,18 @@
     <string name="create_event_hint_type">Tipo</string>
     <string name="create_event_hint_school">Escuela</string>
 
+    <!-- User profile hint text -->
+    <string name="profile_user_textbutton_edit">Editar</string>
+    <string name="profile_user_text_name">Nombres:</string>
+    <string name="profile_user_text_phone">Telefono:</string>
+    <string name="profile_user_phone">952607080</string>
+    <string name="profile_user_text_lastname">Apellidos:</string>
+    <string name="profile_user_lastname">Roma Rodriguez</string>
+    <string name="profile_user_status">Activo</string>
+    <string name="profile_user_text_status">Estado:</string>
+    <string name="profile_user_text_email">Correo Electrónico:</string>
+    <string name="user_change_password">Cambiar contraseña</string>
+    <string name="user_edit_save">Guardar cambios</string>
+
 </resources>
 

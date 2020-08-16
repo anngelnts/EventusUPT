@@ -71,4 +71,15 @@ public interface ApiService {
 
     @GET("organizers/profile")
     Call<OrganizerResponse> getProfileOrganizer(@Query("token") String token);
+
+    @GET("users/profile")
+    Call<UserResponse> getProfileUsers(@Query("token")String token);
+
+    @FormUrlEncoded
+    @POST("users/profile")
+    Call<UserResponse> editProfileUser(@Field("token") String token,
+                                       @Field("name") String name,
+                                       @Field("lastname") String lastname,
+                                       @Field("phone") String phone,
+                                       @Field("email") String email);
 }

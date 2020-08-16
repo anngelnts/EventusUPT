@@ -299,7 +299,7 @@ public class CreateEventActivity extends AppCompatActivity {
     }
 
     private void OnBack(){
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, MainActivityOrganizer.class);
         startActivity(intent);
         finish();
     }
