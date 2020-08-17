@@ -2,6 +2,8 @@ package com.desarrollo.eventusupt;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.desarrollo.eventusupt.helpers.SaveSharedPreference;
 import com.desarrollo.eventusupt.retrofit.ApiService;
 import com.desarrollo.eventusupt.retrofit.RetrofitClient;
 import com.desarrollo.eventusupt.retrofit.responses.UserResponse;
@@ -75,9 +78,30 @@ public class RegisterActivity extends AppCompatActivity {
         buttonCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                OnBack();
+                mostrarDialogo();
             }
         });
+    }
+
+    private void mostrarDialogo() {
+        new AlertDialog.Builder(this)
+                .setTitle("Se perderan todos los cambios")
+                .setMessage("¿Desea cancelar?")
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                })
+                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.d("Mensaje","Se canceló la acción");
+                    }
+                })
+                .show();
     }
 
     private void sendPost(int audience, String name, String lastname, String phone, String email, String password, int status) {

@@ -1,7 +1,10 @@
 package com.desarrollo.eventusupt.fragments;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +51,29 @@ public class ProfileOrganizerFragment extends Fragment {
         getProfile();
     }
 
+    private void mostrarDialogo() {
+        new AlertDialog.Builder(getContext())
+                .setTitle("Cerrando sesión")
+                .setMessage("¿Desea cerrar sesión?")
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //cerrar sesión
+                        SaveSharedPreference.setLoggedIn(getContext(), "", false, "");
+                        Intent intent = new Intent(getContext(), LoginActivity.class);
+                        startActivity(intent);
+                        getActivity().finish();
+                    }
+                })
+                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.d("Mensaje","Se canceló la acción");
+                    }
+                })
+                .show();
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_profile_organizer, container, false);
@@ -88,11 +114,7 @@ public class ProfileOrganizerFragment extends Fragment {
         organizer_button_signoff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //cerrar sesión
-                SaveSharedPreference.setLoggedIn(getContext(), "", false, "");
-                Intent intent = new Intent(getContext(), LoginActivity.class);
-                startActivity(intent);
-                getActivity().finish();
+                mostrarDialogo();
             }
         });
 

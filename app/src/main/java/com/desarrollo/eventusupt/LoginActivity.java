@@ -44,10 +44,10 @@ public class LoginActivity extends AppCompatActivity {
                 String username = editUsername.getText().toString();
                 String password = editPassword.getText().toString();
                 if(username.isEmpty()) {
-                    Toast.makeText(LoginActivity.this, "por favor ingrese su correo electrónico", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Por favor ingrese su correo electrónico", Toast.LENGTH_SHORT).show();
                 }
                 else if(password.isEmpty()) {
-                    Toast.makeText(LoginActivity.this, "por favor ingrese su contraseña", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Por favor ingrese su contraseña", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     onLogin(username, password);

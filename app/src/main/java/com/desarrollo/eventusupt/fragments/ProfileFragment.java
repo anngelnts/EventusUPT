@@ -1,5 +1,7 @@
 package com.desarrollo.eventusupt.fragments;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -7,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.desarrollo.eventusupt.LoginActivity;
+import com.desarrollo.eventusupt.MainActivity;
 import com.desarrollo.eventusupt.ProfileEditActivity;
 import com.desarrollo.eventusupt.R;
 import com.desarrollo.eventusupt.helpers.SaveSharedPreference;
@@ -46,6 +50,28 @@ public class ProfileFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getProfile();
+    }
+
+    private void mostrarDialogo() {
+        new AlertDialog.Builder(getContext())
+                .setTitle("Cerrando sesión")
+                .setMessage("¿Desea cerrar sesión?")
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        SaveSharedPreference.setLoggedIn(getContext(), "", false, "");
+                        Intent intent = new Intent(getContext(), LoginActivity.class);
+                        startActivity(intent);
+                        getActivity().finish();
+                    }
+                })
+                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.d("Mensaje","Se canceló la acción");
+                    }
+                })
+                .show();
     }
 
     @Override
@@ -85,10 +111,7 @@ public class ProfileFragment extends Fragment {
         user_button_signoff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SaveSharedPreference.setLoggedIn(getContext(), "", false, "");
-                Intent intent = new Intent(getContext(), LoginActivity.class);
-                startActivity(intent);
-                getActivity().finish();
+                mostrarDialogo();
             }
         });
     }

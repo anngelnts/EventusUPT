@@ -134,5 +134,9 @@
     <string name="user_change_password">Cambiar contraseña</string>
     <string name="user_edit_save">Guardar cambios</string>
 
+    <!-- Alert dialog options -->
+    <string name="yes">Si</string>
+    <string name="no">No</string>
+
 </resources>
 
