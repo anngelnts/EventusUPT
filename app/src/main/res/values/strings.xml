@@ -138,5 +138,9 @@
     <string name="yes">Si</string>
     <string name="no">No</string>
 
+    <!-- Event detail buttons -->
+    <string name="detail_event_button_participate">Participar</string>
+    <string name="detail_event_button_check">Marcar Asistencia</string>
+
 </resources>
 

@@ -1,9 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailEventActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.ProfileFragment"
+    android:background="@color/colorGrayLight">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@color/colorWhite">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_event"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="#E5E5E5"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp">
+
+                <TextView
+                    android:id="@+id/txt_event_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CATEC 2020-I: Marketing digital en tiempos de COVID-19 por Lic.Juan Leguizamon Almendra"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:id="@+id/txt_event_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Descripción CATEC 2020-I: Marketing digital en tiempos de COVID,  con la presencia del Lic. Juan Leguizamon Almendra de Argentina."
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/colorGray"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/event_starttime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/create_event_starttime"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/txt_event_starttime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5:00 pm"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp"
+                            android:layout_marginBottom="5dp"/>
+
+                        <TextView
+                            android:id="@+id/event_endtime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/create_event_endtime"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/txt_event_endtime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="6:00 pm"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp"
+                            android:layout_marginBottom="5dp"/>
+
+                        <TextView
+                            android:id="@+id/event_format"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/create_event_format"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/txt_event_format"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:fontFamily="sans-serif"
+                            android:text="Virtual"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/event_event"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/create_event_address"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/txt_event_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="www.catec.pe"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp"
+                            android:layout_marginBottom="5dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <Button
+                            android:id="@+id/detail_event_button_participate"
+                            android:text="@string/detail_event_button_participate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <Button
+                            android:id="@+id/detail_event_button_check"
+                            android:text="@string/detail_event_button_check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

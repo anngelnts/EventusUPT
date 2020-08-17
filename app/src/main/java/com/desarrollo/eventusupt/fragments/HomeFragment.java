@@ -67,6 +67,8 @@ public class HomeFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), DetailEventActivity.class);
+                int id = listEvents.get(recyclerView.getChildAdapterPosition(v)).getId();
+                intent.putExtra("id", id);
                 startActivity(intent);
                 getActivity();
             }

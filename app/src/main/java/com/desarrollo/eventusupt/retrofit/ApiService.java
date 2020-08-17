@@ -17,6 +17,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface ApiService {
@@ -39,6 +40,9 @@ public interface ApiService {
     //events
     @GET("events")
     Call<List<EventResponse>> getEvents();
+
+    @GET("events/{id}")
+    Call<EventResponse> getEventResponse(@Path("id")int id);
 
     @FormUrlEncoded
     @POST("events")
