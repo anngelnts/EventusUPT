@@ -34,9 +34,6 @@ public class ProfileEditOrganizerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_edit_organizer);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-
         inicializarDatos();
 
         String name = getIntent().getStringExtra("name");

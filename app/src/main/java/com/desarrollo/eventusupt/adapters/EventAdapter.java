@@ -14,9 +14,13 @@ import com.desarrollo.eventusupt.models.EventModel;
 
 import java.util.ArrayList;
 
-public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolderEvents> {
+public class EventAdapter
+        extends RecyclerView.Adapter<EventAdapter.ViewHolderEvents>
+        implements View.OnClickListener{
+
 
     private ArrayList<EventModel> listEvents;
+    private View.OnClickListener listener;
 
     public EventAdapter(ArrayList<EventModel> listEvents) {
         this.listEvents = listEvents;
@@ -26,6 +30,9 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolderEv
     @Override
     public ViewHolderEvents onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_event, null, false);
+
+        view.setOnClickListener(this);
+
         return new ViewHolderEvents(view);
     }
 
@@ -37,6 +44,17 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolderEv
     @Override
     public int getItemCount() {
         return listEvents.size();
+    }
+
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener=listener;
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (listener!=null){
+            listener.onClick(view);
+        }
     }
 
     static class ViewHolderEvents extends RecyclerView.ViewHolder {

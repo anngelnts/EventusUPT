@@ -1,5 +1,6 @@
 package com.desarrollo.eventusupt.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.desarrollo.eventusupt.DetailEventActivity;
 import com.desarrollo.eventusupt.R;
 import com.desarrollo.eventusupt.adapters.EventAdapter;
 import com.desarrollo.eventusupt.models.EventModel;
@@ -28,10 +30,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment{
 
     private ArrayList<EventModel> listEvents;
     private RecyclerView recyclerView;
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -59,6 +62,16 @@ public class HomeFragment extends Fragment {
 
     private void setAdapter(){
         EventAdapter eventAdapter = new EventAdapter(listEvents);
+
+        eventAdapter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), DetailEventActivity.class);
+                startActivity(intent);
+                getActivity();
+            }
+        });
+
         recyclerView.setAdapter(eventAdapter);
     }
 
@@ -115,4 +128,5 @@ public class HomeFragment extends Fragment {
         listEvents.add(new EventModel(20, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage2, "Martes 16 de junio | 9:30 - 10:30 am" ));
        */
     }
+
 }
