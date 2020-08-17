@@ -1,13 +1,13 @@
 package com.desarrollo.eventusupt;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.desarrollo.eventusupt.helpers.SaveSharedPreference;
 import com.desarrollo.eventusupt.retrofit.RetrofitClient;
@@ -57,10 +57,41 @@ public class DetailEventActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 registerParticipant();
-                Toast.makeText(getApplicationContext(), "Se registro al evento", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        detail_event_button_check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkParticipant();
             }
         });
     }
+
+    private void checkParticipant() {
+        String token = SaveSharedPreference.getLoggedToken(getApplicationContext());
+        Call<ParticipantResponse> call = RetrofitClient.getInstance().getApi().checkParticipant(token,idevento);
+        call.enqueue((new Callback<ParticipantResponse>() {
+            @Override
+            public void onResponse(Call<ParticipantResponse> call, Response<ParticipantResponse> response) {
+                if(response.code() == 200) {
+                    assert response.body() != null;
+                    Toast.makeText(getApplicationContext(), "Se marco su asistencia correctamente", Toast.LENGTH_SHORT).show();
+                }else if(response.code() == 401){
+                    Toast.makeText(getApplicationContext(), "No se pudo marcar su asistencia", Toast.LENGTH_SHORT).show();
+                }
+                else if(response.code() == 404){
+                    Toast.makeText(getApplicationContext(), "No se pudo marcar su asistencia", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ParticipantResponse> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "Error fatal", Toast.LENGTH_SHORT).show();
+            }
+        }));
+    }
+
 
     private void registerParticipant() {
         String token = SaveSharedPreference.getLoggedToken(getApplicationContext());
