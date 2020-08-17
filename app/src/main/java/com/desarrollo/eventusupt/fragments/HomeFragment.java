@@ -106,29 +106,5 @@ public class HomeFragment extends Fragment{
                 Log.d("TAG","request"+"\n"+t);
             }
         });
-
-        /*
-        listEvents.add(new EventModel(1, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage, "Martes 16 de junio | 9:30 - 10:30 am" ));
-        listEvents.add(new EventModel(2, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage2, "Martes 16 de junio | 9:30 - 10:30 am" ));
-        listEvents.add(new EventModel(3, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage, "Martes 16 de junio | 9:30 - 10:30 am" ));
-        listEvents.add(new EventModel(4, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage2, "Martes 16 de junio | 9:30 - 10:30 am" ));
-        listEvents.add(new EventModel(5, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage, "Martes 16 de junio | 9:30 - 10:30 am" ));
-        listEvents.add(new EventModel(6, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage2, "Martes 16 de junio | 9:30 - 10:30 am" ));
-        listEvents.add(new EventModel(7, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage, "Martes 16 de junio | 9:30 - 10:30 am" ));
-        listEvents.add(new EventModel(8, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage2, "Martes 16 de junio | 9:30 - 10:30 am" ));
-        listEvents.add(new EventModel(9, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage, "Martes 16 de junio | 9:30 - 10:30 am" ));
-        listEvents.add(new EventModel(10, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage2, "Martes 16 de junio | 9:30 - 10:30 am" ));
-        listEvents.add(new EventModel(11, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage, "Martes 16 de junio | 9:30 - 10:30 am" ));
-        listEvents.add(new EventModel(12, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage2, "Martes 16 de junio | 9:30 - 10:30 am" ));
-        listEvents.add(new EventModel(13, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage, "Martes 16 de junio | 9:30 - 10:30 am" ));
-        listEvents.add(new EventModel(14, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage2, "Martes 16 de junio | 9:30 - 10:30 am" ));
-        listEvents.add(new EventModel(15, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage, "Martes 16 de junio | 9:30 - 10:30 am" ));
-        listEvents.add(new EventModel(16, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage2, "Martes 16 de junio | 9:30 - 10:30 am" ));
-        listEvents.add(new EventModel(17, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage, "Martes 16 de junio | 9:30 - 10:30 am" ));
-        listEvents.add(new EventModel(18, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage2, "Martes 16 de junio | 9:30 - 10:30 am" ));
-        listEvents.add(new EventModel(19, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage, "Martes 16 de junio | 9:30 - 10:30 am" ));
-        listEvents.add(new EventModel(20, "Dirección de Educación Continua", "Charla virtual: Talleres de apoyo a tesis para optar al título profesional en Ingeniería Industrial 2020-1", R.drawable.eventimage2, "Martes 16 de junio | 9:30 - 10:30 am" ));
-       */
     }
-
 }

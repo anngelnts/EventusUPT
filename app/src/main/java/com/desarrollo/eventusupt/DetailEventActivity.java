@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ public class DetailEventActivity extends AppCompatActivity {
     TextView txt_event_address;
     Button detail_event_button_participate;
     Button detail_event_button_check;
+    ImageView img_event;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +36,6 @@ public class DetailEventActivity extends AppCompatActivity {
         idevento = getIntent().getIntExtra("id",0);
         inicializarDatos();
         getEvent();
-
-        //Para probar el ID
-        //Toast.makeText(DetailEventActivity.this, ""+idevento, Toast.LENGTH_SHORT).show();
     }
 
     private void inicializarDatos() {
@@ -46,6 +45,7 @@ public class DetailEventActivity extends AppCompatActivity {
         txt_event_endtime = findViewById(R.id.txt_event_endtime);
         txt_event_format = findViewById(R.id.txt_event_format);
         txt_event_address = findViewById(R.id.txt_event_address);
+        img_event = findViewById(R.id.img_event);
 
         detail_event_button_participate = findViewById(R.id.detail_event_button_participate);
         detail_event_button_check = findViewById(R.id.detail_event_button_check);
@@ -75,8 +75,6 @@ public class DetailEventActivity extends AppCompatActivity {
     }
 
     private void setEventDetail(EventResponse eventDetail){
-
-
 
         txt_event_title.setText(eventDetail.getTitle());
         txt_event_description.setText(eventDetail.getDescription());
