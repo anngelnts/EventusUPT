@@ -1,10 +1,11 @@
 package com.desarrollo.eventusupt;
 
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
-
-import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -23,5 +24,9 @@ public class MainActivityOrganizer extends AppCompatActivity {
         bottomNavigationViewOrganizer = findViewById(R.id.buttom_navigation_organizer);
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_organizer);
         NavigationUI.setupWithNavController(bottomNavigationViewOrganizer, navHostFragment.getNavController());
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

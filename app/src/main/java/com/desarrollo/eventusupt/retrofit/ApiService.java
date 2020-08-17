@@ -4,6 +4,7 @@ import com.desarrollo.eventusupt.retrofit.responses.EventResponse;
 import com.desarrollo.eventusupt.retrofit.responses.EventTypeResponse;
 import com.desarrollo.eventusupt.retrofit.responses.LoginResponse;
 import com.desarrollo.eventusupt.retrofit.responses.OrganizerResponse;
+import com.desarrollo.eventusupt.retrofit.responses.ParticipantResponse;
 import com.desarrollo.eventusupt.retrofit.responses.UserResponse;
 
 import java.util.List;
@@ -98,4 +99,9 @@ public interface ApiService {
                                        @Field("lastname") String lastname,
                                        @Field("phone") String phone,
                                        @Field("email") String email);
+
+    @FormUrlEncoded
+    @POST("events/register/participant")
+    Call<ParticipantResponse> registerParticipant(@Field("token") String token,
+                                       @Field("event_id") int event_id);
 }

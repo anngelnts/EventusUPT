@@ -3,13 +3,16 @@ package com.desarrollo.eventusupt;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.desarrollo.eventusupt.helpers.SaveSharedPreference;
 import com.desarrollo.eventusupt.retrofit.RetrofitClient;
 import com.desarrollo.eventusupt.retrofit.responses.EventResponse;
+import com.desarrollo.eventusupt.retrofit.responses.ParticipantResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -49,6 +52,38 @@ public class DetailEventActivity extends AppCompatActivity {
 
         detail_event_button_participate = findViewById(R.id.detail_event_button_participate);
         detail_event_button_check = findViewById(R.id.detail_event_button_check);
+
+        detail_event_button_participate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                registerParticipant();
+                Toast.makeText(getApplicationContext(), "Se registro al evento", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void registerParticipant() {
+        String token = SaveSharedPreference.getLoggedToken(getApplicationContext());
+        Call<ParticipantResponse> call = RetrofitClient.getInstance().getApi().registerParticipant(token,idevento);
+        call.enqueue((new Callback<ParticipantResponse>() {
+            @Override
+            public void onResponse(Call<ParticipantResponse> call, Response<ParticipantResponse> response) {
+                if(response.code() == 200) {
+                    assert response.body() != null;
+                    Toast.makeText(getApplicationContext(), "Se registro al evento", Toast.LENGTH_SHORT).show();
+                }else if(response.code() == 401){
+                    Toast.makeText(getApplicationContext(), "No se pudo registrar al evento", Toast.LENGTH_SHORT).show();
+                }
+                else if(response.code() == 404){
+                    Toast.makeText(getApplicationContext(), "No se pudo registrar al evento", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ParticipantResponse> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "No se pudo registrar al evento", Toast.LENGTH_SHORT).show();
+            }
+        }));
     }
 
     private void getEvent() {
