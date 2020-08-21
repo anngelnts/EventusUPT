@@ -2,6 +2,7 @@ package com.desarrollo.eventusupt.retrofit;
 
 import com.desarrollo.eventusupt.retrofit.responses.EventResponse;
 import com.desarrollo.eventusupt.retrofit.responses.EventTypeResponse;
+import com.desarrollo.eventusupt.retrofit.responses.EventUserResponse;
 import com.desarrollo.eventusupt.retrofit.responses.LoginResponse;
 import com.desarrollo.eventusupt.retrofit.responses.OrganizerResponse;
 import com.desarrollo.eventusupt.retrofit.responses.ParticipantResponse;
@@ -19,6 +20,7 @@ import retrofit2.http.Query;
 
 public interface ApiService {
 
+    //login and register
     @FormUrlEncoded
     @POST("users/register")
     Call<UserResponse> createUser(@Field("audience_id") int audience,
@@ -95,6 +97,12 @@ public interface ApiService {
                                        @Field("lastname") String lastname,
                                        @Field("phone") String phone,
                                        @Field("email") String email);
+
+    @GET("users/my-events")
+    Call<List<EventUserResponse>> getAllEventsUser(@Query("token")String token);
+
+    @GET("users/my-events/{id}")
+    Call<EventUserResponse> getEventUserDetail(@Path("id")String id);
 
     //participants
 

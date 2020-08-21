@@ -5,7 +5,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
@@ -16,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetailEventActivity"></activity>
+        <activity android:name=".DetailMyEventActivity"></activity>
+        <activity android:name=".DetailEventActivity" />
         <activity android:name=".ProfileEditActivity" />
         <activity
             android:name=".CreateEventActivity"

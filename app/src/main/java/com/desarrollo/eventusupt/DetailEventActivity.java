@@ -29,7 +29,6 @@ public class DetailEventActivity extends AppCompatActivity {
     TextView txt_event_format;
     TextView txt_event_address;
     Button detail_event_button_participate;
-    Button detail_event_button_check;
     ImageView img_event;
 
     @Override
@@ -51,7 +50,6 @@ public class DetailEventActivity extends AppCompatActivity {
         img_event = findViewById(R.id.img_event);
 
         detail_event_button_participate = findViewById(R.id.detail_event_button_participate);
-        detail_event_button_check = findViewById(R.id.detail_event_button_check);
 
         detail_event_button_participate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,39 +57,7 @@ public class DetailEventActivity extends AppCompatActivity {
                 registerParticipant();
             }
         });
-
-        detail_event_button_check.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                checkParticipant();
-            }
-        });
     }
-
-    private void checkParticipant() {
-        String token = SaveSharedPreference.getLoggedToken(getApplicationContext());
-        Call<ParticipantResponse> call = RetrofitClient.getInstance().getApi().checkParticipant(token,idevento);
-        call.enqueue((new Callback<ParticipantResponse>() {
-            @Override
-            public void onResponse(Call<ParticipantResponse> call, Response<ParticipantResponse> response) {
-                if(response.code() == 200) {
-                    assert response.body() != null;
-                    Toast.makeText(getApplicationContext(), "Se marco su asistencia correctamente", Toast.LENGTH_SHORT).show();
-                }else if(response.code() == 401){
-                    Toast.makeText(getApplicationContext(), "No se pudo marcar su asistencia", Toast.LENGTH_SHORT).show();
-                }
-                else if(response.code() == 404){
-                    Toast.makeText(getApplicationContext(), "No se pudo marcar su asistencia", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ParticipantResponse> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "Error fatal", Toast.LENGTH_SHORT).show();
-            }
-        }));
-    }
-
 
     private void registerParticipant() {
         String token = SaveSharedPreference.getLoggedToken(getApplicationContext());
@@ -99,9 +65,9 @@ public class DetailEventActivity extends AppCompatActivity {
         call.enqueue((new Callback<ParticipantResponse>() {
             @Override
             public void onResponse(Call<ParticipantResponse> call, Response<ParticipantResponse> response) {
-                if(response.code() == 200) {
+                if(response.code() == 201) {
                     assert response.body() != null;
-                    Toast.makeText(getApplicationContext(), "Se registro al evento", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Se registró al evento correctamente", Toast.LENGTH_SHORT).show();
                 }else if(response.code() == 401){
                     Toast.makeText(getApplicationContext(), "No se pudo registrar al evento", Toast.LENGTH_SHORT).show();
                 }

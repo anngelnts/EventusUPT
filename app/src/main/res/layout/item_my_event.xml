@@ -4,56 +4,48 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/colorContent">
+    android:background="@color/colorGrayLight">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_item_my_event"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp">
+        android:orientation="vertical"
+        android:background="@color/colorWhite"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:id="@+id/my_event_image"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            app:srcCompat="@drawable/eventimage"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/my_event_image_description" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@color/colorWhite">
 
-            <ImageView
-                android:id="@+id/my_event_image"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                app:srcCompat="@drawable/eventimage"
-                android:scaleType="centerCrop"
-                android:contentDescription="@string/my_event_image_description"
-                />
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/my_event_date_time"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:text="@string/my_event_date"
+                android:textSize="16sp"
+                android:textColor="@color/colorGray"/>
 
-                <TextView
-                    android:id="@+id/my_event_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/my_event_date"
-                    android:textSize="16sp"
-                    android:textColor="@color/colorGray"
-                    />
-
-                <TextView
-                    android:id="@+id/my_event_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/my_event_title"
-                    android:textSize="18sp"
-                    android:textColor="@color/colorPrimary"
-                    />
-
-            </LinearLayout>
+            <TextView
+                android:id="@+id/my_event_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_event_title"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimary"/>
 
         </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
 
 </LinearLayout>

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".fragments.ProfileFragment"
+    tools:context=".DetailMyEventActivity"
     android:background="@color/colorGrayLight">
 
     <ScrollView
@@ -33,7 +34,7 @@
                 android:layout_marginEnd="15dp">
 
                 <TextView
-                    android:id="@+id/txt_event_title"
+                    android:id="@+id/txt_my_event_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="CATEC 2020-I: Marketing digital en tiempos de COVID-19 por Lic.Juan Leguizamon Almendra"
@@ -44,7 +45,7 @@
                     android:layout_marginBottom="5dp"/>
 
                 <TextView
-                    android:id="@+id/txt_event_description"
+                    android:id="@+id/txt_my_event_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Descripción CATEC 2020-I: Marketing digital en tiempos de COVID,  con la presencia del Lic. Juan Leguizamon Almendra de Argentina."
@@ -65,7 +66,7 @@
                         android:layout_weight="1">
 
                         <TextView
-                            android:id="@+id/event_starttime"
+                            android:id="@+id/my_event_starttime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/create_event_starttime"
@@ -75,7 +76,7 @@
                             android:textSize="18sp"/>
 
                         <TextView
-                            android:id="@+id/txt_event_starttime"
+                            android:id="@+id/txt_my_event_starttime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="5:00 pm"
@@ -85,7 +86,7 @@
                             android:layout_marginBottom="5dp"/>
 
                         <TextView
-                            android:id="@+id/event_endtime"
+                            android:id="@+id/my_event_endtime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/create_event_endtime"
@@ -95,7 +96,7 @@
                             android:textSize="18sp"/>
 
                         <TextView
-                            android:id="@+id/txt_event_endtime"
+                            android:id="@+id/txt_my_event_endtime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="6:00 pm"
@@ -105,7 +106,7 @@
                             android:layout_marginBottom="5dp"/>
 
                         <TextView
-                            android:id="@+id/event_format"
+                            android:id="@+id/my_event_format"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/create_event_format"
@@ -115,7 +116,7 @@
                             android:textSize="18sp"/>
 
                         <TextView
-                            android:id="@+id/txt_event_format"
+                            android:id="@+id/txt_my_event_format"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
@@ -125,7 +126,7 @@
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/event_event"
+                            android:id="@+id/my_event_address"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/create_event_address"
@@ -135,7 +136,7 @@
                             android:textSize="18sp"/>
 
                         <TextView
-                            android:id="@+id/txt_event_address"
+                            android:id="@+id/txt_my_event_address"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="www.catec.pe"
@@ -153,8 +154,8 @@
                         android:layout_weight="1">
 
                         <Button
-                            android:id="@+id/detail_event_button_participate"
-                            android:text="@string/detail_event_button_participate"
+                            android:id="@+id/detail_my_event_button_check"
+                            android:text="@string/detail_event_button_check"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 

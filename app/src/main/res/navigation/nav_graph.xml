@@ -31,9 +31,9 @@
         tools:layout="@layout/fragment_explore" />
     <fragment
         android:id="@+id/eventFragment"
-        android:name="com.desarrollo.eventusupt.fragments.EventFragment"
+        android:name="com.desarrollo.eventusupt.fragments.MyEventFragment"
         android:label="fragment_event"
-        tools:layout="@layout/fragment_event" />
+        tools:layout="@layout/fragment_myevent" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.desarrollo.eventusupt.fragments.ProfileFragment"
