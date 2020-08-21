@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.desarrollo.eventusupt.R;
 import com.desarrollo.eventusupt.models.EventModel;
 
@@ -70,7 +71,7 @@ public class MyEventAdapter
         }
 
         void assignData(EventModel eventModel) {
-            image.setImageResource(eventModel.getImage());
+            Glide.with(image.getContext()).load(eventModel.getImage()).into(image);
             event_date.setText(eventModel.getDateString());
             event_title.setText(eventModel.getTitle());
         }

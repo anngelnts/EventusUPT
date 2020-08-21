@@ -4,10 +4,10 @@ public class EventModel {
     private int id;
     private String provider;
     private String title;
-    private int image;
+    private String image;
     private String dateString;
 
-    public EventModel(int id, String provider, String title, int image, String dateString) {
+    public EventModel(int id, String provider, String title, String image, String dateString) {
         this.id = id;
         this.provider = provider;
         this.title = title;
@@ -41,11 +41,11 @@ public class EventModel {
         this.title = title;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

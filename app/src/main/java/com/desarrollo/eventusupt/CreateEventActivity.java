@@ -12,8 +12,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -40,11 +43,17 @@ public class CreateEventActivity extends AppCompatActivity {
     EditText editDate;
     EditText editTimeStart;
     EditText editTimeEnd;
-    EditText editFormat;
-    EditText editStatus;
+
+    Spinner cmbFormat;
+    Spinner cmbStatus;
+
     EditText editUrlAddress;
-    EditText editEventType;
-    EditText editSchool;
+
+    Spinner cmbType;
+    Spinner cmbFaculty;
+    Spinner cmbSchools;
+
+    EditText editUrlImage;
 
     Button buttonImageAdd;
     Button buttonCreateEvent;
@@ -60,15 +69,90 @@ public class CreateEventActivity extends AppCompatActivity {
         editDate = findViewById(R.id.create_event_edt_date);
         editTimeStart = findViewById(R.id.create_event_edt_starttime);
         editTimeEnd = findViewById(R.id.create_event_edt_endtime);
-        editFormat = findViewById(R.id.create_event_edt_format);
-        editStatus = findViewById(R.id.create_event_edt_status);
-        editUrlAddress = findViewById(R.id.create_event_edt_address);
-        editEventType = findViewById(R.id.create_event_edt_type);
-        editSchool = findViewById(R.id.create_event_edt_school);
 
-        buttonImageAdd = findViewById(R.id.create_evento_button_image);
+        cmbFormat = findViewById(R.id.create_event_cmb_format);
+        cmbStatus = findViewById(R.id.create_event_cmb_status);
+
+        editUrlAddress = findViewById(R.id.create_event_edt_address);
+
+        cmbType = findViewById(R.id.create_event_cmb_type);
+        cmbFaculty = findViewById(R.id.create_event_cmb_faculty);
+        cmbSchools = findViewById(R.id.create_event_cmb_school);
+        editUrlImage = findViewById(R.id.create_event_edt_imageurl);
+
+        //buttonImageAdd = findViewById(R.id.create_evento_button_image);
         buttonCreateEvent = findViewById(R.id.create_evento_button_create);
         buttonCancel = findViewById(R.id.create_event_button_cancel);
+
+        ArrayAdapter<CharSequence> adapterFormat = ArrayAdapter.createFromResource(this, R.array.create_event_format, R.layout.item_spinner);
+        adapterFormat.setDropDownViewResource(R.layout.item_spinner);
+        cmbFormat.setAdapter(adapterFormat);
+
+        ArrayAdapter<CharSequence> adapterStatus = ArrayAdapter.createFromResource(this, R.array.create_event_status, R.layout.item_spinner);
+        adapterStatus.setDropDownViewResource(R.layout.item_spinner);
+        cmbStatus.setAdapter(adapterStatus);
+
+        ArrayAdapter<CharSequence> adapterType = ArrayAdapter.createFromResource(this, R.array.create_event_type, R.layout.item_spinner);
+        adapterType.setDropDownViewResource(R.layout.item_spinner);
+        cmbType.setAdapter(adapterType);
+
+        ArrayAdapter<CharSequence> adapterFaculty = ArrayAdapter.createFromResource(this, R.array.create_event_faculty, R.layout.item_spinner);
+        adapterFaculty.setDropDownViewResource(R.layout.item_spinner);
+        cmbFaculty.setAdapter(adapterFaculty);
+
+        ArrayAdapter<CharSequence> adapterSchoolFaing = ArrayAdapter.createFromResource(this, R.array.create_event_faing_school, R.layout.item_spinner);
+        adapterSchoolFaing.setDropDownViewResource(R.layout.item_spinner);
+
+        ArrayAdapter<CharSequence> adapterSchoolFaedcoh = ArrayAdapter.createFromResource(this, R.array.create_event_faedcoh_school, R.layout.item_spinner);
+        adapterSchoolFaing.setDropDownViewResource(R.layout.item_spinner);
+
+        ArrayAdapter<CharSequence> adapterSchoolFade = ArrayAdapter.createFromResource(this, R.array.create_event_fade_school, R.layout.item_spinner);
+        adapterSchoolFade.setDropDownViewResource(R.layout.item_spinner);
+
+        ArrayAdapter<CharSequence> adapterSchoolFacsa = ArrayAdapter.createFromResource(this, R.array.create_event_facsa_school, R.layout.item_spinner);
+        adapterSchoolFacsa.setDropDownViewResource(R.layout.item_spinner);
+
+        ArrayAdapter<CharSequence> adapterSchoolFacem = ArrayAdapter.createFromResource(this, R.array.create_event_facem_school, R.layout.item_spinner);
+        adapterSchoolFacem.setDropDownViewResource(R.layout.item_spinner);
+
+        ArrayAdapter<CharSequence> adapterSchoolFau = ArrayAdapter.createFromResource(this, R.array.create_event_fau_school, R.layout.item_spinner);
+        adapterSchoolFau.setDropDownViewResource(R.layout.item_spinner);
+
+        cmbFaculty.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (cmbFaculty.getSelectedItem().toString()){
+                    case "FAING":
+                        cmbSchools.setAdapter(adapterSchoolFaing);
+                        break;
+
+                    case "FAEDCOH":
+                        cmbSchools.setAdapter(adapterSchoolFaedcoh);
+                        break;
+
+                    case "FADE":
+                        cmbSchools.setAdapter(adapterSchoolFade);
+                        break;
+
+                    case "FACSA":
+                        cmbSchools.setAdapter(adapterSchoolFacsa);
+                        break;
+
+                    case "FACEM":
+                        cmbSchools.setAdapter(adapterSchoolFacem);
+                        break;
+
+                    case "FAU":
+                        cmbSchools.setAdapter(adapterSchoolFau);
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
 
         editDate.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +175,7 @@ public class CreateEventActivity extends AppCompatActivity {
                 showEndTimePickerDialog();
             }
         });
+        /*
 
         buttonImageAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +183,8 @@ public class CreateEventActivity extends AppCompatActivity {
                 selectImage();
             }
         });
+
+         */
 
         buttonCreateEvent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,12 +194,74 @@ public class CreateEventActivity extends AppCompatActivity {
                 String date = editDate.getText().toString();
                 String timestart = editTimeStart.getText().toString();
                 String timeend = editTimeEnd.getText().toString();
-                String format = editFormat.getText().toString();
-                String eventstatus = editStatus.getText().toString();
+
+                String formatCmb = cmbFormat.getSelectedItem().toString();
+                int format = 0;
+                if (formatCmb.equals("Virtual")) { format = 1; } else { format = 0; }
+
+                String statusCmb = cmbStatus.getSelectedItem().toString();
+                int status = 0;
+                if (statusCmb.equals("Activo")) { status = 1; } else { status = 0; }
+
                 String urladdress = editUrlAddress.getText().toString();
-                String eventtype = editEventType.getText().toString();
-                String school = editSchool.getText().toString();
-                int status = 1;
+
+                String typeCmb = cmbType.getSelectedItem().toString();
+                int type = 0;
+                switch (typeCmb){
+                    case "Académico":
+                        type = 1;
+                        break;
+
+                    case "Atletismo":
+                        type = 2;
+                        break;
+
+                    case "Ceremonia":
+                        type = 3;
+                        break;
+
+                    case "Conferencia":
+                        type = 4;
+                        break;
+
+                    case "Exposición":
+                        type = 5;
+                        break;
+
+                    case "Sesion de informacion":
+                        type = 6;
+                        break;
+
+                    case "Conferencias y seminarios":
+                        type = 7;
+                        break;
+
+                    case "Reunión":
+                        type = 8;
+                        break;
+
+                    case "Actuación":
+                        type = 9;
+                        break;
+
+                    case "Evento especial":
+                        type = 10;
+                        break;
+
+                    case "Actividad estudiantil":
+                        type = 11;
+                        break;
+
+                    case "Taller":
+                        type = 12;
+                        break;
+                }
+
+                String schoolCmb = cmbSchools.getSelectedItem().toString();
+                int school = 0;
+                if (schoolCmb.equals("EPIS")) { school = 1; }
+
+                String urlImage = editUrlImage.getText().toString();
 
                 if (title.isEmpty()){
                     Toast.makeText(CreateEventActivity.this, "Por favor ingrese un título", Toast.LENGTH_SHORT).show();
@@ -124,30 +273,30 @@ public class CreateEventActivity extends AppCompatActivity {
                     Toast.makeText(CreateEventActivity.this, "Por favor ingrese la hora inicio", Toast.LENGTH_SHORT).show();
                 }else if (timeend.isEmpty()){
                     Toast.makeText(CreateEventActivity.this, "Por favor ingrese la hora fin", Toast.LENGTH_SHORT).show();
-                }else if (format.isEmpty()){
-                    Toast.makeText(CreateEventActivity.this, "Por favor ingrese un formato", Toast.LENGTH_SHORT).show();
-                }else if (eventstatus.isEmpty()){
-                    Toast.makeText(CreateEventActivity.this, "Por favor ingrese el estado", Toast.LENGTH_SHORT).show();
                 }else if (urladdress.isEmpty()){
                     Toast.makeText(CreateEventActivity.this, "Por favor ingrese una Direccion/URL", Toast.LENGTH_SHORT).show();
-                }else if (eventtype.isEmpty()){
-                    Toast.makeText(CreateEventActivity.this, "Por favor ingrese un tipo de evento", Toast.LENGTH_SHORT).show();
-                }else if (school.isEmpty()){
-                    Toast.makeText(CreateEventActivity.this, "Por favor ingrese una escuela", Toast.LENGTH_SHORT).show();
+                }else if (urlImage.isEmpty()){
+                    Toast.makeText(CreateEventActivity.this, "Por favor ingrese la URL de la imagen", Toast.LENGTH_SHORT).show();
                 }else {
                     EventResponse eventResponse = new EventResponse();
-                    eventResponse.setTypeId(1);
-                    eventResponse.setSchoolId(1);
+                    eventResponse.setTypeId(type);
+                    eventResponse.setSchoolId(school);
                     eventResponse.setTitle(title);
                     eventResponse.setDescription(description);
                     eventResponse.setEventDate(date);
                     eventResponse.setStartTime(timestart);
                     eventResponse.setEndTime(timeend);
                     eventResponse.setIsOutstanding(1);
-                    eventResponse.setIsVirtual(1);
-                    eventResponse.setIsOpen(0);
-                    eventResponse.setLocation("");
-                    eventResponse.setEventLink("");
+                    eventResponse.setIsVirtual(format);
+                    eventResponse.setIsOpen(1);
+
+                    if (format == 1){
+                        eventResponse.setEventLink(urladdress);
+                    } else {
+                        eventResponse.setLocation(urladdress);
+                    }
+
+                    eventResponse.setImage(urlImage);
                     eventResponse.setStatus(status);
                     sendPost(eventResponse);
                 }
@@ -163,6 +312,9 @@ public class CreateEventActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+    }
+
+    private void CrearInicializarSpinner() {
     }
 
     private void mostrarDialogo() {
@@ -248,25 +400,6 @@ public class CreateEventActivity extends AppCompatActivity {
 
     private void sendPost(EventResponse event){
         String tokenString = SaveSharedPreference.getLoggedToken(getApplicationContext());
-        //File file = new File(String.valueOf(uriImage));
-
-        //RequestBody requestBody = RequestBody.create(file, MediaType.parse("image/*"));
-        //MultipartBody.Part image = MultipartBody.Part.createFormData("image", file.getName(), requestBody);
-        /*RequestBody type_id = RequestBody.create(event.getTitle(), MediaType.parse("text/plain"));
-        RequestBody school_id = RequestBody.create(event.getTitle(), MediaType.parse("text/plain"));
-        RequestBody title = RequestBody.create(event.getTitle(), MediaType.parse("text/plain"));
-        RequestBody description = RequestBody.create(event.getTitle(), MediaType.parse("text/plain"));
-        RequestBody event_date = RequestBody.create(event.getTitle(), MediaType.parse("text/plain"));
-        RequestBody start_time = RequestBody.create(event.getTitle(), MediaType.parse("text/plain"));
-        RequestBody end_time = RequestBody.create(event.getTitle(), MediaType.parse("text/plain"));
-        RequestBody is_outstanding = RequestBody.create(event.getTitle(), MediaType.parse("text/plain"));
-        RequestBody is_virtual = RequestBody.create(event.getTitle(), MediaType.parse("text/plain"));
-        RequestBody is_open = RequestBody.create(event.getTitle(), MediaType.parse("text/plain"));
-        RequestBody location = RequestBody.create(event.getTitle(), MediaType.parse("text/plain"));
-        RequestBody event_link = RequestBody.create(event.getTitle(), MediaType.parse("text/plain"));
-        RequestBody status = RequestBody.create(event.getTitle(), MediaType.parse("text/plain"));
-        RequestBody token = RequestBody.create(tokenString, MediaType.parse("text/plain"));*/
-
 
         int type_id = event.getTypeId();
         int school_id = event.getSchoolId();
@@ -281,6 +414,7 @@ public class CreateEventActivity extends AppCompatActivity {
         String location = event.getLocation();
         String event_link = event.getEventLink();
         int status = event.getStatus();
+        String imageUrl = event.getImage();
 
         Call<EventResponse> call = RetrofitClient.getInstance().getApi().createEvents(
                 //image,
@@ -297,6 +431,7 @@ public class CreateEventActivity extends AppCompatActivity {
                 location,
                 event_link,
                 status,
+                imageUrl,
                 tokenString
         );
         call.enqueue(new Callback<EventResponse>() {
@@ -304,6 +439,9 @@ public class CreateEventActivity extends AppCompatActivity {
             public void onResponse(Call<EventResponse> call, Response<EventResponse> response) {
                 if(response.code() == 201){
                     Toast.makeText(CreateEventActivity.this, "Evento registrado", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), MainActivityOrganizer.class);
+                    startActivity(intent);
+                    finish();
                 }else{
                     Toast.makeText(CreateEventActivity.this, "No se pudo registrar el evento", Toast.LENGTH_SHORT).show();
                 }

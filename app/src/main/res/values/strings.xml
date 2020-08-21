@@ -104,10 +104,85 @@
     <string name="create_event_status">Estado:</string>
     <string name="create_event_address">Dirección/URL:</string>
     <string name="create_event_type">Tipo de Evento:</string>
+    <string name="create_event_faculty">Facultad:</string>
     <string name="create_event_school">Escuela:</string>
 
     <string name="create_event_button_image">Adjuntar</string>
     <string name="create_event_button_create">Crear Evento</string>
+
+    <string-array name="create_event_format">
+        <item>Virtual</item>
+        <item>Presencial</item>
+    </string-array>
+
+    <string-array name="create_event_status">
+        <item>Activo</item>
+        <item>Inactivo</item>
+    </string-array>
+
+    <string-array name="create_event_type">
+        <item>Académico</item>
+        <item>Atletismo</item>
+        <item>Ceremonia</item>
+        <item>Conferencia</item>
+        <item>Exposición</item>
+        <item>Sesion de informacion</item>
+        <item>Conferencias y seminarios</item>
+        <item>Reunión</item>
+        <item>Actuación</item>
+        <item>Evento especial</item>
+        <item>Actividad estudiantil</item>
+        <item>Taller</item>
+    </string-array>
+
+    <string-array name="create_event_faculty">
+        <item>FAING</item>
+        <item>FAEDCOH</item>
+        <item>FADE</item>
+        <item>FACSA</item>
+        <item>FACEM</item>
+        <item>FAU</item>
+    </string-array>
+
+    <string-array name="create_event_faing_school">
+        <item>EPIC</item>
+        <item>EPIS</item>
+        <item>EPIE</item>
+        <item>EPIA</item>
+        <item>EPIAM</item>
+        <item>EPII</item>
+    </string-array>
+
+    <string-array name="create_event_faedcoh_school">
+        <item>EPE</item>
+        <item>EPCC</item>
+        <item>EPHP</item>
+    </string-array>
+
+    <string-array name="create_event_fade_school">
+        <item>EPD</item>
+    </string-array>
+
+    <string-array name="create_event_facsa_school">
+        <item>EPMH</item>
+        <item>EPO</item>
+        <item>EPTM</item>
+    </string-array>
+
+    <string-array name="create_event_facem_school">
+        <item>EPATH</item>
+        <item>EPANI</item>
+        <item>EPCCF</item>
+        <item>EPICO</item>
+        <item>EPEM</item>
+        <item>EPIPA</item>
+    </string-array>
+
+    <string-array name="create_event_fau_school">
+        <item>EPA</item>
+        <item>EPDG</item>
+        <item>EPDP</item>
+    </string-array>
 
     <!-- Event hint text -->
     <string name="create_event_hint_title">Ingrese el titulo del evento</string>
@@ -120,6 +195,7 @@
     <string name="create_event_hint_address">Ingrese la dirección/URL</string>
     <string name="create_event_hint_type">Tipo</string>
     <string name="create_event_hint_school">Escuela</string>
+    <string name="create_event_hint_URLImage">Ingrese aqui la URL de la imagen</string>
 
     <!-- User profile hint text -->
     <string name="profile_user_textbutton_edit">Editar</string>

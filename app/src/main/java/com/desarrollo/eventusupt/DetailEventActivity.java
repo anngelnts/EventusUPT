@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.desarrollo.eventusupt.helpers.SaveSharedPreference;
 import com.desarrollo.eventusupt.retrofit.RetrofitClient;
 import com.desarrollo.eventusupt.retrofit.responses.EventResponse;
@@ -121,5 +122,6 @@ public class DetailEventActivity extends AppCompatActivity {
             txt_event_format.setText(format);
             txt_event_address.setText(eventDetail.getLocation());
         }
+        Glide.with(img_event.getContext()).load(eventDetail.getImage()).into(img_event);
     }
 }

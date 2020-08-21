@@ -54,27 +54,19 @@ public class QROrganizerFragment  extends Fragment {
                 Intent intent = new Intent(getContext(), QrCodeActivity.class);
                 startActivityForResult(intent, REQUEST_CODE_QR_SCAN);
             }
-
-            public void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-                if (resultCode != Activity.RESULT_OK) {
-                    Toast.makeText(getContext(), "No se pudo obtener una respuesta", Toast.LENGTH_SHORT).show();
-                    String resultado = data.getStringExtra("com.blikoon.qrcodescanner.error_decoding_image");
-                    if (resultado != null) {
-                        Toast.makeText(getContext(), "No se pudo escanear el código QR", Toast.LENGTH_SHORT).show();
-                    }
-                    return;
-                }
-                if (requestCode == REQUEST_CODE_QR_SCAN) {
-                    if (data != null) {
-                        String lectura = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
-                        Toast.makeText(getContext(), "Leído: " + lectura, Toast.LENGTH_SHORT).show();
-
-                    }
-                }
-            }
-
         });
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode,@Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE_QR_SCAN && resultCode == Activity.RESULT_OK){
+            String lectura = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
+            Toast.makeText(getContext(), "Leído: " + lectura, Toast.LENGTH_SHORT).show();
+        } else {
+
+        }
 
     }
 

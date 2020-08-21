@@ -90,7 +90,7 @@ public class MyEventFragment extends Fragment {
                         eventModel.setId(event.getId());
                         eventModel.setTitle(event.getTitle());
                         eventModel.setProvider("Dirección de Educación Continua");
-                        eventModel.setImage(R.drawable.eventimage);
+                        eventModel.setImage(event.getImage());
                         eventModel.setDateString(event.getEventDate());
                         listEvents.add(eventModel);
                     }

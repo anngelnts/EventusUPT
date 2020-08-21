@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.desarrollo.eventusupt.helpers.SaveSharedPreference;
 import com.desarrollo.eventusupt.retrofit.RetrofitClient;
 import com.desarrollo.eventusupt.retrofit.responses.EventResponse;
@@ -79,6 +80,7 @@ public class DetailMyEventActivity extends AppCompatActivity {
             txt_my_event_format.setText(format);
             txt_my_event_address.setText(eventUserDetail.getLocation());
         }
+        Glide.with(img_event.getContext()).load(eventUserDetail.getImage()).into(img_event);
     }
 
     private void iniciarlizarDatos() {

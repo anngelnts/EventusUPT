@@ -59,6 +59,7 @@ public interface ApiService {
                                      @Field("location") String location,
                                      @Field("event_link") String event_link,
                                      @Field("status") int status,
+                                     @Field("image_url") String image_url,
                                      @Field("token") String token);
 
 
