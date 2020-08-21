@@ -7,6 +7,7 @@ import com.desarrollo.eventusupt.retrofit.responses.LoginResponse;
 import com.desarrollo.eventusupt.retrofit.responses.OrganizerResponse;
 import com.desarrollo.eventusupt.retrofit.responses.ParticipantResponse;
 import com.desarrollo.eventusupt.retrofit.responses.UserResponse;
+import com.desarrollo.eventusupt.retrofit.responses.eventorganizer.EventOrganizerResponse;
 
 import java.util.List;
 
@@ -86,6 +87,11 @@ public interface ApiService {
     @GET("organizers/profile")
     Call<OrganizerResponse> getProfileOrganizer(@Query("token") String token);
 
+    @GET("organizers/my-events")
+    Call<List<EventResponse>> getMyEventsOrganizer(@Query("token")String token);
+
+    @GET("organizers/my-event/{id}/participants")
+    Call<EventOrganizerResponse> getEventOrganizerDetail(@Path("id")int id);
 
     //users
     @GET("users/profile")

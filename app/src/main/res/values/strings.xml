@@ -217,6 +217,7 @@
     <!-- Event detail buttons -->
     <string name="detail_event_button_participate">Participar</string>
     <string name="detail_event_button_check">Marcar Asistencia</string>
+    <string name="event_organizer_participants">Ver participantes</string>
 
 </resources>
 

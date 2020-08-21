@@ -15,7 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetailMyEventActivity"></activity>
+        <activity android:name=".DetailEventParticipants"></activity>
+        <activity android:name=".DetailMyEventOrganizer" />
+        <activity android:name=".DetailMyEventActivity" />
         <activity android:name=".DetailEventActivity" />
         <activity android:name=".ProfileEditActivity" />
         <activity
