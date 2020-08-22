@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.desarrollo.eventusupt.helpers.SaveSharedPreference;
@@ -20,6 +21,8 @@ import retrofit2.Response;
 
 public class ProfileEditOrganizerActivity extends AppCompatActivity {
 
+    TextView organizer_text_username;
+    TextView organizer_text_email;
     EditText organizer_edt_name;
     EditText organizer_edt_acronym;
     EditText organizer_edt_phone;
@@ -44,6 +47,8 @@ public class ProfileEditOrganizerActivity extends AppCompatActivity {
         String facebook = getIntent().getStringExtra("facebook");
         String website = getIntent().getStringExtra("website");
 
+        organizer_text_username.setText(name);
+        organizer_text_email.setText(email);
         organizer_edt_name.setText(name);
         organizer_edt_acronym.setText(acronym);
         organizer_edt_phone.setText(phone);
@@ -93,6 +98,8 @@ public class ProfileEditOrganizerActivity extends AppCompatActivity {
     }
 
     private void inicializarDatos() {
+        organizer_text_username = findViewById(R.id.organizer_text_username);
+        organizer_text_email = findViewById(R.id.organizer_text_email);
         organizer_edt_name = findViewById(R.id.organizer_edt_name);
         organizer_edt_acronym = findViewById(R.id.organizer_edt_acronym);
         organizer_edt_phone = findViewById(R.id.organizer_edt_phone);

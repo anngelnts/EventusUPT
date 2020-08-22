@@ -13,7 +13,6 @@ import com.bumptech.glide.Glide;
 import com.desarrollo.eventusupt.helpers.SaveSharedPreference;
 import com.desarrollo.eventusupt.retrofit.RetrofitClient;
 import com.desarrollo.eventusupt.retrofit.responses.EventResponse;
-import com.desarrollo.eventusupt.retrofit.responses.EventUserResponse;
 import com.desarrollo.eventusupt.retrofit.responses.ParticipantResponse;
 
 import retrofit2.Call;
@@ -22,7 +21,7 @@ import retrofit2.Response;
 
 public class DetailMyEventActivity extends AppCompatActivity {
 
-    private int idevento;
+    public static int idevento;
 
     ImageView img_event;
     TextView txt_my_event_title;
@@ -97,7 +96,12 @@ public class DetailMyEventActivity extends AppCompatActivity {
         detail_my_event_button_check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkParticipant();
+                if (txt_my_event_format.getText().toString().equals("Virtual")){
+                    checkParticipant();
+                } else {
+                    MyQRDialog myQRDialog = new MyQRDialog();
+                    myQRDialog.show(getSupportFragmentManager(), "MyQRDialog");
+                }
             }
         });
 

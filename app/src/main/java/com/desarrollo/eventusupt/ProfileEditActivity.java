@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.desarrollo.eventusupt.fragments.ProfileFragment;
@@ -21,6 +22,8 @@ import retrofit2.Response;
 
 public class ProfileEditActivity extends AppCompatActivity {
 
+    TextView user_text_username;
+    TextView user_text_email;
     EditText user_edt_name;
     EditText user_edt_lastname;
     EditText user_edt_phone;
@@ -41,6 +44,8 @@ public class ProfileEditActivity extends AppCompatActivity {
         String email = getIntent().getStringExtra("email");
         String status = getIntent().getStringExtra("status");
 
+        user_text_username.setText(name);
+        user_text_email.setText(email);
         user_edt_name.setText(name);
         user_edt_lastname.setText(lastname);
         user_edt_phone.setText(phone);
@@ -56,6 +61,8 @@ public class ProfileEditActivity extends AppCompatActivity {
     }
 
     private void inicializarDatos() {
+        user_text_username = findViewById(R.id.user_text_username);
+        user_text_email = findViewById(R.id.user_text_email);
         user_edt_name = findViewById(R.id.user_edt_name);
         user_edt_lastname = findViewById(R.id.user_edt_lastname);
         user_edt_phone = findViewById(R.id.user_edt_phone);

@@ -175,16 +175,6 @@ public class CreateEventActivity extends AppCompatActivity {
                 showEndTimePickerDialog();
             }
         });
-        /*
-
-        buttonImageAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectImage();
-            }
-        });
-
-         */
 
         buttonCreateEvent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -275,6 +265,8 @@ public class CreateEventActivity extends AppCompatActivity {
                     Toast.makeText(CreateEventActivity.this, "Por favor ingrese la hora fin", Toast.LENGTH_SHORT).show();
                 }else if (urladdress.isEmpty()){
                     Toast.makeText(CreateEventActivity.this, "Por favor ingrese una Direccion/URL", Toast.LENGTH_SHORT).show();
+                }else if (school == 0){
+                    Toast.makeText(CreateEventActivity.this, "Seleecione en escuela, EPIS", Toast.LENGTH_SHORT).show();
                 }else if (urlImage.isEmpty()){
                     Toast.makeText(CreateEventActivity.this, "Por favor ingrese la URL de la imagen", Toast.LENGTH_SHORT).show();
                 }else {
@@ -314,8 +306,6 @@ public class CreateEventActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
-    private void CrearInicializarSpinner() {
-    }
 
     private void mostrarDialogo() {
         new AlertDialog.Builder(this)

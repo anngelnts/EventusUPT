@@ -91,7 +91,7 @@ public class HomeFragment extends Fragment{
                     for (EventResponse event : events) {
                         EventModel eventModel = new EventModel();
                         eventModel.setId(event.getId());
-                        eventModel.setProvider("Dirección de Educación Continua");
+                        eventModel.setProvider("EPIS");
                         eventModel.setTitle(event.getTitle());
                         eventModel.setImage(event.getImage());
                         eventModel.setDateString(event.getEventDate());

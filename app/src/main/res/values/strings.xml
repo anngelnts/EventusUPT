@@ -48,7 +48,7 @@
 
     <!-- qr text -->
     <string name="qr_message_title">Escanear código QR</string>
-    <string name="qr_message_description">Apunta su cámara hacia el código QR para ver la información del evento</string>
+    <string name="qr_message_description">Apunta su cámara hacia el código QR ingresar via WEB</string>
     <string name="qr_image_description">Escanear Evento</string>
     <string name="qr_button_scan">Escanear</string>
 

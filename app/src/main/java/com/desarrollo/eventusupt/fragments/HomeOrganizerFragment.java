@@ -58,7 +58,7 @@ public class HomeOrganizerFragment extends Fragment {
                         EventModel eventModel = new EventModel();
                         eventModel.setId(event.getId());
                         eventModel.setTitle(event.getTitle());
-                        eventModel.setProvider("Dirección de Educación Continua");
+                        eventModel.setProvider("EPIS");
                         eventModel.setImage(event.getImage());
                         eventModel.setDateString(event.getEventDate());
                         listEvents.add(eventModel);

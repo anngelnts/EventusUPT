@@ -18,6 +18,12 @@ import androidx.fragment.app.Fragment;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.desarrollo.eventusupt.R;
+import com.desarrollo.eventusupt.retrofit.RetrofitClient;
+import com.desarrollo.eventusupt.retrofit.responses.ParticipantResponse;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class QROrganizerFragment  extends Fragment {
 
@@ -62,13 +68,39 @@ public class QROrganizerFragment  extends Fragment {
     public void onActivityResult(int requestCode, int resultCode,@Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE_QR_SCAN && resultCode == Activity.RESULT_OK){
-            String lectura = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
-            Toast.makeText(getContext(), "Leído: " + lectura, Toast.LENGTH_SHORT).show();
-        } else {
-
+            String QRcode = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
+            String[] QRparts = QRcode.split("==");
+            if (QRparts.length > 1){
+                String token = QRparts[0].trim();
+                String idevento = QRparts[1].trim();
+                checkParticipant(token, idevento);
+            } else {
+                Toast.makeText(getContext(), "No se pudo marcar la asistencia", Toast.LENGTH_SHORT).show();
+            }
         }
-
     }
 
+    private void checkParticipant(String token, String idevento) {
+        Call<ParticipantResponse> call = RetrofitClient.getInstance().getApi().checkParticipant(token,Integer.parseInt(idevento));
+        call.enqueue((new Callback<ParticipantResponse>() {
+            @Override
+            public void onResponse(Call<ParticipantResponse> call, Response<ParticipantResponse> response) {
+                if(response.code() == 200) {
+                    assert response.body() != null;
+                    Toast.makeText(getContext(), "Se marco su asistencia correctamente", Toast.LENGTH_SHORT).show();
+                }else if(response.code() == 401){
+                    Toast.makeText(getContext(), "No se pudo marcar su asistencia", Toast.LENGTH_SHORT).show();
+                }
+                else if(response.code() == 404){
+                    Toast.makeText(getContext(), "No se pudo marcar su asistencia", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ParticipantResponse> call, Throwable t) {
+                Toast.makeText(getContext(), "Error fatal", Toast.LENGTH_SHORT).show();
+            }
+        }));
+    }
 
 }

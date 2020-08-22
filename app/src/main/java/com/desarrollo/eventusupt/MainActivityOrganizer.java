@@ -26,7 +26,4 @@ public class MainActivityOrganizer extends AppCompatActivity {
         NavigationUI.setupWithNavController(bottomNavigationViewOrganizer, navHostFragment.getNavController());
     }
 
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-    }
 }

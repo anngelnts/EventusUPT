@@ -21,9 +21,8 @@
             <ImageView
                 android:id="@+id/img_event"
                 android:layout_width="match_parent"
-                android:layout_height="280dp"
+                android:layout_height="wrap_content"
                 android:background="#E5E5E5"
-                android:src="@drawable/eventimage2"
                 android:layout_marginBottom="10dp"/>
 
             <LinearLayout
