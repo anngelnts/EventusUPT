@@ -52,14 +52,9 @@ public class ParticipantsAdapter extends RecyclerView.Adapter<ParticipantsAdapte
         }
 
         void assignData(ParticipantModel participantModel) {
+            String assistance = participantModel.getAssistance()==1 ? "Asistió" : "No Asistió";
             txt_participant_name.setText(participantModel.getName());
-            if (participantModel.getAssistance()==0){
-                String assistance = participantModel.getAssistance()==1 ? "No Asistió" : "Asistió";
-                txt_participant_assistant.setText(assistance);
-            }else{
-                String assistance = participantModel.getAssistance()==2 ? "No Asistió" : "Asistió";
-                txt_participant_assistant.setText(assistance);
-            }
+            txt_participant_assistant.setText(assistance);
             txt_participant_assistant_time.setText(participantModel.getAssistanceTime());
         }
     }
