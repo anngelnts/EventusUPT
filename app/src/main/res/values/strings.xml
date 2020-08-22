@@ -219,5 +219,10 @@
     <string name="detail_event_button_check">Marcar Asistencia</string>
     <string name="event_organizer_participants">Ver participantes</string>
 
+    <!-- Participants event -->
+    <string name="participants_name">Nombres y Apellidos</string>
+    <string name="participants_assitant">Asistencia</string>
+    <string name="participants_assitant_time">Hora</string>
+
 </resources>
 

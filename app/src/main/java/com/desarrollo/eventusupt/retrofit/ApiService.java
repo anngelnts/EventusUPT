@@ -3,6 +3,7 @@ package com.desarrollo.eventusupt.retrofit;
 import com.desarrollo.eventusupt.retrofit.responses.EventResponse;
 import com.desarrollo.eventusupt.retrofit.responses.EventTypeResponse;
 import com.desarrollo.eventusupt.retrofit.responses.EventUserResponse;
+import com.desarrollo.eventusupt.retrofit.responses.FcmResponse;
 import com.desarrollo.eventusupt.retrofit.responses.LoginResponse;
 import com.desarrollo.eventusupt.retrofit.responses.OrganizerResponse;
 import com.desarrollo.eventusupt.retrofit.responses.ParticipantResponse;
@@ -111,8 +112,12 @@ public interface ApiService {
     @GET("users/my-events/{id}")
     Call<EventUserResponse> getEventUserDetail(@Path("id")String id);
 
-    //participants
+    @FormUrlEncoded
+    @POST("users/qr-authentication")
+    Call<FcmResponse> authQRUser(@Field("token_qr") String token_qr,
+                                 @Field("token_user") String token_user);
 
+    //participants
     @FormUrlEncoded
     @POST("events/register/participant")
     Call<ParticipantResponse> registerParticipant(@Field("token") String token,

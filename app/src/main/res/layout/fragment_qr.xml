@@ -64,7 +64,7 @@
                 android:contentDescription="@string/qr_image_description"/>
 
             <Button
-                android:id="@+id/button_scan"
+                android:id="@+id/button_user_scan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
